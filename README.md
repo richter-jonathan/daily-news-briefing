@@ -86,19 +86,22 @@ In `index.html` liegt zwischen diesen Markern ein JSON-Block:
 {
   "date": "2026-11-20",                 // YYYY-MM-DD – entscheidet, ob der Push gesendet wird
   "dateLabel": "Freitag, 20. November",
-  "top": { "title": "…", "text": "…", "motif": "bank", "sources": [["Name", "https://…"]] },
+  "top": { "title": "…", "text": "…", "details": "…", "motif": "bank", "sources": [["Name", "https://…"]] },
   "sections": [
     { "id": "de",  "title": "Deutsche Politik",       "tab": "Inland",     "items": [ /* 3 Meldungen */ ] },
     { "id": "int", "title": "Internationale Politik", "tab": "Welt",       "items": [ … ] },
     { "id": "wi",  "title": "Wirtschaft",             "tab": "Wirtschaft", "items": [ … ] },
     { "id": "it",  "title": "Informatik & Tech",      "tab": "Tech",       "items": [ … ] }
   ],
-  "extra": { "title": "…", "text": "…", "motif": "game", "sources": [ … ] },   // optional
+  "extra": { "title": "…", "text": "…", "details": "…", "motif": "game", "sources": [ … ] },   // optional
   "updated": "20.11.2026, 06:52 Uhr"
 }
 ```
 
-Jede Meldung (`items[]`) hat die Felder `title`, `text`, `motif` und `sources`.
+Jede Meldung (`items[]`, auch `top` und `extra`) hat die Felder `title`, `text`, `details`, `motif` und `sources`.
+
+- `text` ist der Überblick in 1–2 Sätzen und wird immer angezeigt.
+- `details` ist eine ausführlichere Zusammenfassung (ca. 5–8 Sätze, Absätze durch `\n\n` getrennt). Die App zeigt darunter den Knopf „Mehr anzeigen“, der sie auf- und wieder zuklappt. Fehlt `details`, erscheint kein Knopf.
 
 **Erlaubte `motif`-Werte** (gezeichnete Illustrationen statt Fotos):
 `bank`, `stars`, `telecom`, `agreement`, `summit`, `ship`, `server`, `chart-up`, `chart-down`, `bell`, `acquisition`, `code`, `chip`, `shield`, `game`, `globe`, `parliament`.
@@ -119,9 +122,9 @@ Was die Routine macht:
 
 1. Sie ermittelt das heutige Datum in Berliner Zeit.
 2. Sie sucht Nachrichten der letzten ~24 Stunden zu vier Themen und bevorzugt seriöse Quellen.
-3. Sie schreibt ein Top-Thema, je 3 Meldungen pro Rubrik und optional ein „Extra“, alles in eigenen Worten.
+3. Sie schreibt ein Top-Thema, je 3 Meldungen pro Rubrik und optional ein „Extra“, alles in eigenen Worten: pro Meldung einen Überblick (`text`, 1–2 Sätze) und eine ausführliche Zusammenfassung (`details`).
 4. Sie ersetzt **nur** den `BRIEFING-DATA`-Block in `index.html`.
-5. Sie prüft mit Python: gültiges JSON, `date` ist heute, 4×3 Meldungen, erlaubte Motive, nur `index.html` geändert.
+5. Sie prüft mit Python: gültiges JSON, `date` ist heute, 4×3 Meldungen, erlaubte Motive, `text` und `details` überall vorhanden, nur `index.html` geändert.
 6. Sie committet `Briefing YYYY-MM-DD` und pusht auf `main`.
 
 **Voraussetzung:** Claude braucht Schreibzugriff auf das Repo. Dafür muss GitHub unter

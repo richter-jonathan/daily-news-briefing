@@ -76,6 +76,25 @@ figure svg{display:block;width:100%;height:auto}
 .row p{font-size:15px;color:var(--ink);opacity:.86}
 .row .src{grid-column:1/3}
 
+/* Mehr anzeigen */
+.top .body{--c:var(--de)}
+.row .more,.row .more-btn{grid-column:1/3;margin-top:4px}
+.more{margin-top:12px}
+.more[hidden]{display:none}
+.more p{font-size:15px;opacity:1;color:var(--ink)}
+.more p+p{margin-top:10px}
+.more-btn{all:unset;box-sizing:border-box;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;
+  display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin-top:12px;padding:10px 16px;
+  border-radius:12px;font-size:15px;font-weight:600;color:var(--c);
+  background:color-mix(in srgb,var(--c) 11%,transparent);border:1px solid color-mix(in srgb,var(--c) 22%,transparent);
+  transition:background-color .15s,transform .1s}
+.more-btn:active{background:color-mix(in srgb,var(--c) 20%,transparent);transform:scale(.98)}
+@media (hover:hover){.more-btn:hover{background:color-mix(in srgb,var(--c) 16%,transparent)}}
+.more-btn:focus-visible{outline:2px solid var(--c);outline-offset:2px;border-radius:12px}
+.more-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.more-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.more-btn,.more-btn svg{transition:none}.more-btn:active{transform:none}}
+
 .src{margin-top:8px;font-size:13px;color:var(--muted)}
 .src a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .src a:hover{color:var(--ink)}
@@ -133,7 +152,8 @@ nav button.on svg{stroke:var(--k)}
         "t-online",
         "https://www.t-online.de/finanzen/aktuelles/id_101536170/bund-trifft-einigung-mit-unicredit-bei-commerzbank-uebernahme.html"
       ]
-    ]
+    ],
+    "details": "Finanzminister Lars Klingbeil (SPD) spricht von einer „gemeinsamen Basis“. Grundlage ist ein Brief von UniCredit-Chef Andrea Orcel mit acht Zusagen: Die Commerzbank bleibt eine börsennotierte Aktiengesellschaft mit Sitz in Frankfurt, trifft wesentliche Entscheidungen weiterhin in Deutschland, wird angemessen mit Kapital ausgestattet und soll ihr Mittelstandsgeschäft ausbauen. Nach der geplanten Verschmelzung mit der UniCredit-Tochter HVB soll die Deutschlandzentrale in Frankfurt sitzen, auch in München will Orcel eine bedeutende Präsenz behalten. Außerdem sind ein Kompetenz- und Innovationszentrum in Deutschland und eine angemessene Vertretung im UniCredit-Verwaltungsrat vorgesehen.\n\nDamit vollzieht Berlin eine Kehrtwende: Noch im Juli hatte die Regierung das Vorgehen der Italiener als „feindlich“ abgelehnt. UniCredit hält bereits knapp 50 Prozent, der Bund gut 13 Prozent aus der Rettung in der Finanzkrise. Seine zwei Aufsichtsratssitze gibt er auf, stattdessen schlägt UniCredit zwei unabhängige Mitglieder mit Kenntnis des deutschen Markts vor. Ob der Bund seine Anteile verkauft, ist offen; Orcel würde das unterstützen.\n\nUmstritten bleiben die Arbeitsplätze: Orcels Pläne sehen laut Berichten den Abbau von rund 7.000 der etwa 40.000 Stellen vor. Bestehende Schutzregeln bis 2030 sollen gelten, ein Verzicht auf betriebsbedingte Kündigungen ist aber nicht zugesagt. Betriebsratschef Sascha Uebel begrüßt die Einigung vorsichtig, Verdi fordert Sicherheiten über 2030 hinaus. Im ersten Quartal 2027 will Orcel eine außerordentliche Hauptversammlung einberufen und die Kapitalseite des Aufsichtsrats neu besetzen; danach könnte auch der Vorstand um Bettina Orlopp ausgetauscht werden."
   },
   "sections": [
     {
@@ -154,7 +174,8 @@ nav button.on svg{stroke:var(--k)}
               "taz",
               "https://taz.de/Koalition-der-Willigen-in-Berlin/!6231331"
             ]
-          ]
+          ],
+          "details": "Es war das bisher größte Treffen der Koalition der Willigen, die Anfang 2025 zur Unterstützung der Ukraine gegründet wurde und heute rund 40 Länder von Japan über Polen bis Kanada umfasst. Merz richtete den Gipfel gemeinsam mit Frankreich und Großbritannien aus. Der Termin wenige Stunden nach dem Dreiertreffen von Trump, Xi und Putin in Shenzhen war laut Regierungskreisen bewusst gewählt, um schnell gemeinsam reagieren zu können. Witkoff und Kushner sollten auch von ihrem Treffen mit Putin in Moskau in der Vorwoche berichten; Trump schaltete sich laut Insidern per Telefon zu.\n\nMerz und Selenskyj warnten vor einem „zweiten Jalta“, also einer Friedenslösung, die Großmächte über die Köpfe Europas hinweg aushandeln. NATO-Generalsekretär Rutte nannte das Shenzhen-Treffen dagegen normal unter Atommächten. Polens Premier Tusk erwartet ernsthafte Verhandlungsbereitschaft Russlands nicht vor Ende des Winters.\n\nOffen ist vor allem, wer nach einem Waffenstillstand Sicherheitsgarantien gibt; die USA sehen hier die Europäer in der Pflicht. Parallel schlägt die EU-Kommission ein Paket von 45 Mrd. Euro für die Ukraine vor, über das ein EU-Sondergipfel kommende Woche entscheiden soll."
         },
         {
           "title": "Commerzbank-Deal: Klingbeil nennt Zusagen, Rhein ist zufrieden",
@@ -169,7 +190,8 @@ nav button.on svg{stroke:var(--k)}
               "wallstreet-online",
               "https://www.wallstreet-online.de/nachricht/21718335-deal-klingbeil-unicredit-commerzbank-versprechen"
             ]
-          ]
+          ],
+          "details": "Klingbeil betont, UniCredit habe klare Zusagen zum Standort Deutschland, zu den Rechten der Beschäftigten und zum weiteren Dialog mit dem Betriebsrat gemacht. Diese entsprächen den Kernanliegen der Bundesregierung, die nun ein zügiges Verfahren und einen geordneten Kontrollwechsel unterstütze. Wie es mit der Bundesbeteiligung von gut 13 Prozent weitergeht, ließ er offen.\n\nHessens Ministerpräsident Boris Rhein (CDU) wertet die Zusagen als klares Bekenntnis zum Finanzplatz Frankfurt. Er dankte Orcel für den konstruktiven Austausch; gemeinsam sei es gelungen, den Standort zu sichern.\n\nWeniger euphorisch fallen die Reaktionen der Arbeitnehmerseite aus. Betriebsratschef Sascha Uebel hält jahrelange Auseinandersetzungen für vermeidbar, wenn die Zusagen eingehalten werden, vermisst aber einen Verzicht auf betriebsbedingte Kündigungen. Laut dpa plant Orcel, rund 7.000 Stellen zu streichen und die Commerzbank mit der Hypovereinsbank zu verschmelzen."
         },
         {
           "title": "Haushalt 2027: Schlussabstimmung im Bundestag kommende Woche",
@@ -184,7 +206,8 @@ nav button.on svg{stroke:var(--k)}
               "ZDFheute",
               "https://www.zdfheute.de/politik/deutschland/haushalt-haushaltsausschuss-bundestag-union-spd-100.html"
             ]
-          ]
+          ],
+          "details": "In der Bereinigungssitzung, die vom 12. auf den 13. November bis kurz vor sechs Uhr morgens dauerte, stimmte der Haushaltsausschuss über rund 2.000 Anträge ab. Gegenüber dem Regierungsentwurf stiegen die Ausgaben um knapp 5,5 Mrd. auf 560,9 Mrd. Euro, so viel wie nie zuvor. Die Investitionen liegen bei 61,9 Mrd. Euro, die Nettokreditaufnahme bei 123 Mrd. Euro; davon fällt ein Großteil unter die Ausnahme für Verteidigung. Mit den Sondertöpfen für Infrastruktur und Bundeswehr dürften die neuen Schulden insgesamt über 200 Mrd. Euro liegen.\n\nInhaltlich wurde nachgebessert: Die Plastiksteuer entfällt, die Zuckersteuer kommt erst 2028, und mehrere Kürzungen im Sozialbereich wurden abgeschwächt. Ungeklärt ist die Finanzierung einer Stromsteuersenkung für alle, die rund 5 Mrd. Euro kosten würde.\n\nDie Koalition spricht von Rekordinvestitionen und einer geschlossenen Lücke von 34 Mrd. Euro. Die Opposition kritisiert die hohe Neuverschuldung; die Grünen nennen den Etat eine „Bretterbude ohne Fundament“. Die Schlussabstimmung samt Haushaltsbegleitgesetz ist für Freitag, den 27. November, angesetzt."
         }
       ]
     },
@@ -206,7 +229,8 @@ nav button.on svg{stroke:var(--k)}
               "Al Jazeera",
               "https://www.aljazeera.com/news/liveblog/2026/11/19/apec-live-trump-xi-and-putin-to-meet-in-historic-three-way-china-summit"
             ]
-          ]
+          ],
+          "details": "Das Treffen in Shenzhen war die erste Begegnung der drei Staatschefs in diesem Format; laut CCTV dauerte es rund 90 Minuten. Anschließend veröffentlichten Kreml und Xinhua, später auch das Weiße Haus, eine gemeinsame Erklärung mit vier Punkten: mehr Öl- und Energieproduktion, Kritik an einem „Missbrauch“ von Befugnissen durch den Internationalen Strafgerichtshof, eine Reform der Vereinten Nationen sowie das Bekenntnis, dass ein Atomkrieg nicht gewonnen werden kann und nie geführt werden darf.\n\nDie Ukraine kommt in der Erklärung nicht vor, obwohl Trump und Putin sagten, man habe über den Krieg gesprochen. Putin lehnte nach dem ukrainischen Angriff auf die Krim-Brücke direkte Verhandlungen ab. Trump wirbt für einen Atomwaffenvertrag zu dritt, stößt in Moskau und Peking aber auf wenig Interesse; Xi forderte stattdessen ein vollständiges Verbot von Atomwaffen.\n\nTrump sprach von einem historischen Treffen, aus dem viel Gutes entstehen werde. Kritik kam von US-Demokraten und aus Europa: Kanzler Merz nannte das Treffen einen Fototermin. Für Freitag hat Trump eine Pressekonferenz angekündigt."
         },
         {
           "title": "Trump verlässt China nach dem APEC-Gipfel",
@@ -221,7 +245,8 @@ nav button.on svg{stroke:var(--k)}
               "NBC News",
               "https://www.nbcnews.com/politics/trump-administration/live-blog/trump-xi-putin-china-apec-congress-2026-live-updates-rcna609888"
             ]
-          ]
+          ],
+          "details": "Das Gespräch mit Putin war ursprünglich nicht auf Trumps Terminplan. Laut Kreml-Berater Juri Uschakow ging es vor allem um die Ukraine und die Vorbereitung des Dreiertreffens; besondere Ankündigungen habe keine Seite gemacht. Das letzte persönliche Treffen der beiden in Alaska im August 2025 war ohne Fortschritte geblieben.\n\nMit Xi sprach Trump vor allem über Handel und Zölle. Xi sagte, beide Länder sollten Partner sein und die „Thukydides-Falle“ vermeiden, also den Konflikt zwischen aufsteigender und etablierter Macht. Trump will China zu mehr Käufen bei US-Farmern bewegen; der Zoll-Waffenstillstand zwischen beiden Ländern läuft am 10. Januar aus.\n\nBeobachter sehen wenig konkrete Ergebnisse. Für Aufsehen sorgten Einschränkungen für Journalisten: Ein Bloomberg-Reporter wurde vom Dreiertreffen ausgeschlossen. Trump verließ Shenzhen am Donnerstag mit der Air Force One Richtung Washington."
         },
         {
           "title": "USA rätseln über Serie großer IT-Ausfälle",
@@ -231,8 +256,13 @@ nav button.on svg{stroke:var(--k)}
             [
               "Axios",
               "https://www.axios.com/2026/11/17/tech-outages-ai-fears-internet-breaking"
+            ],
+            [
+              "Fortune",
+              "https://fortune.com/2026/11/18/ai-played-a-major-role-in-the-nsa-banking-outages-but-not-in-the-way-you-may-think/"
             ]
-          ]
+          ],
+          "details": "In den vergangenen Tagen gab es Störungen unter anderem bei Microsoft, JPMorgan Chase und Apple; betroffen waren auch Flugverbindungen und das interne Netz der NSA. Bei Microsoft fielen am 13. November ganze Dienste aus, darunter E-Mail und KI-Produkte. Das schürte Befürchtungen, KI-gestützte Hackerangriffe könnten dahinterstecken.\n\nVertreter der Regierung, der NSA und großer Banken erklärten Abgeordneten nun laut Berichten, die Ausfälle gingen nicht auf Angriffe zurück, sondern auf zu viele gleichzeitige Updates. KI-Systeme finden derzeit so schnell Sicherheitslücken, etwa zuletzt in PHP, dass Unternehmen Patches unter Zeitdruck auch in alte Systeme einspielen. Ein Kongressmitarbeiter sagte, es würden mehr Patches auf einmal durchgedrückt, als die Systeme verkraften.\n\nDas Weiße Haus sieht keine Hinweise auf einen Zusammenhang der Vorfälle oder auf Kriminelle. Experten warnen jedoch, mit leistungsfähigeren KI-Modellen werde sich das Problem wiederholen. Viele Angaben stammen bisher aus anonymen Quellen."
         }
       ]
     },
@@ -254,7 +284,8 @@ nav button.on svg{stroke:var(--k)}
               "onvista",
               "https://www.onvista.de/news/2026/11-19-dax-unter-26-000-punkten-welche-unterstuetzung-nun-halten-muss-41123281-19-26578224"
             ]
-          ]
+          ],
+          "details": "Am Mittwoch hatte der DAX 1,2 Prozent auf 25.736 Punkte verloren und war erstmals seit Ende Oktober unter die Marke von 26.000 Punkten gefallen. Seit dem kurzen Sprung über 27.000 Punkte vor gut einer Woche summiert sich das Minus auf fast fünf Prozent. Belastet haben Unsicherheit im KI-Sektor und die Sorge vor weiteren Zinserhöhungen der US-Notenbank. An der Wall Street gab der Dow Jones zuletzt gut ein Prozent nach, während der Nasdaq 100 nach guten Nvidia-Zahlen leicht zulegte.\n\nAm Donnerstag führten Chipwerte die Erholung an: Infineon gewann zeitweise rund drei Prozent, im MDax legten Aixtron, Suss Microtec und Elmos um vier bis fünf Prozent zu.\n\nCharttechnisch bleibt die kurzfristige Abwärtstendenz laut Analysten intakt. Als wichtige Unterstützung gilt die Zone um 25.665 bis 25.700 Punkte, darunter 25.600 und 25.500. Erst über 25.950 und der psychologisch wichtigen Marke von 26.000 Punkten würde sich das Bild aufhellen."
         },
         {
           "title": "Anthropic-Börsendebüt an der Nasdaq im Fokus",
@@ -265,7 +296,8 @@ nav button.on svg{stroke:var(--k)}
               "onvista",
               "https://onvista.de/news/2026/11-19-dax-startet-erholungsversuch-boersendebuet-von-anthropic-im-fokus-0-20-26578186"
             ]
-          ]
+          ],
+          "details": "Die Aktie wird ab Donnerstag unter dem Kürzel ANT an der Technologiebörse Nasdaq gehandelt. Der Ausgabepreis liegt bei 83 US-Dollar. Nach eigenen Angaben hat Anthropic rund 81,3 Mrd. Dollar eingesammelt, laut Reuters ein Rekord, der sogar den Börsengang von SpaceX übertrifft.\n\nDer Börsengang fällt in eine Phase, in der Tech- und KI-Werte zuletzt unter Druck standen. Anleger hoffen, dass ein gelungener Start dem Sektor neuen Schwung gibt.\n\nConsorsbank-Chefanalyst Jochen Stanzl rechnet damit, dass Investoren genau beobachten, wie sich der Kurs um den Ausgabepreis entwickelt. Hält sich die Aktie über 83 Dollar, könnte das dem angeschlagenen Sektor Luft verschaffen; ein schwacher Start dürfte die Skepsis gegenüber KI-Bewertungen dagegen verstärken."
         },
         {
           "title": "Commerzbank- und UniCredit-Aktien legen nach Einigung zu",
@@ -280,7 +312,8 @@ nav button.on svg{stroke:var(--k)}
               "ARIVA",
               "https://www.ariva.de/news/bund-einigt-sich-mit-unicredit-bei-commerzbank-uebernahme-12212870"
             ]
-          ]
+          ],
+          "details": "Die Commerzbank-Aktie stieg am Vormittag um gut ein Prozent auf rund 38,20 Euro, UniCredit legte ähnlich stark zu. Mit der Einigung ist die letzte große politische Hürde gefallen; EZB, EU-Kommission und US-Notenbank hatten bereits zugestimmt. Die Annahmefrist des Tauschangebots war im Juli abgelaufen, der Kontrollwechsel könnte im ersten Quartal 2027 gelingen.\n\nOperativ läuft es für die Commerzbank gut: In den ersten neun Monaten stieg der Gewinn um 41 Prozent auf 2,7 Mrd. Euro, für das Gesamtjahr peilt sie mindestens 3,4 Mrd. Euro an. Für 2026 wird eine Dividende von gut 1,50 Euro je Aktie erwartet. Die meisten Analysten raten zum Halten.\n\nBeobachter erwarten, dass UniCredit nach der Übernahme Kosten senkt und Synergien hebt. Einen weiteren Übernahmeaufschlag für Aktionäre halten sie für unwahrscheinlich. Unruhe dürften der geplante Stellenabbau und der Umbau der Führung bringen; offen sind zudem Zeitpunkt und Preis eines möglichen Ausstiegs des Bundes."
         }
       ]
     },
@@ -302,7 +335,8 @@ nav button.on svg{stroke:var(--k)}
               "GitHub-Issue",
               "https://github.com/microsoft/agent-framework/issues/10411"
             ]
-          ]
+          ],
+          "details": "Betroffen ist das offizielle PyPI-Paket agent-framework von Microsoft, das fast 200.000 Mal im Monat heruntergeladen wird. Die manipulierten Versionen erschienen am 17. November; nachdem 1.26.1 zurückgezogen war, lud der Angreifer 1.26.2 offenbar noch über das offizielle Microsoft-Konto hoch. Vermutet wird ein unbefugter Zugriff auf ein Admin-Konto in Microsofts GitHub-Organisation; entdeckt haben den Angriff die Sicherheitsfirmen OX Security und OpenSourceMalware.\n\nDer Schadcode startet schon, wenn Python mit dem installierten Paket läuft; ein Import ist nicht nötig. Zur Tarnung installiert er die echte Version 1.26.0 nach und schickt im Hintergrund Umgebungsvariablen und Zugangsdaten für Azure, Git, Docker, Hugging Face und weitere Dienste an einen externen Server. Zusätzlich fordert er neue Tokens von GitHub Actions, Azure DevOps und Azure an, was ihn in CI-Umgebungen besonders gefährlich macht.\n\nDie schädlichen Versionen sind inzwischen in Quarantäne. Microsoft hat mehrere Repositories vorübergehend auf privat gestellt und untersucht den Vorfall."
         },
         {
           "title": "„Java4Shell“: kritische Lücke im Base64-Decoder von OpenJDK",
@@ -313,7 +347,8 @@ nav button.on svg{stroke:var(--k)}
               "Wiz",
               "https://www.wiz.io/blog/cve-2026-114938-rce-java4shell-openjdk"
             ]
-          ]
+          ],
+          "details": "Die Lücke CVE-2026-114938 hat einen CVSS-Wert von 9,2 und gilt damit als kritisch. Sie steckt im AVX-512-optimierten Base64-Decoder der JVM: Bei einer ungewöhnlichen Zahl von „=“-Zeichen am Ende der Eingabe berechnet der Code die Puffergrenzen falsch und schreibt über den Speicherbereich hinaus. So können Angreifer ohne Anmeldung den Heap beschädigen und im schlimmsten Fall Code ausführen.\n\nBetroffen sind OpenJDK ab Version 17.0.6 und darauf basierende Distributionen wie Temurin, Corretto oder Zulu sowie Oracle Java, allerdings nur auf x86-64-Prozessoren mit AVX-512, etwa neueren Intel Xeon und AMD Zen 4. ARM-Systeme sind nicht betroffen. Wiz zeigt Angriffe auf Jenkins, Confluence und Tomcat; auch Jira, Keycloak, Kafka, Elasticsearch und viele Spring-Boot-Anwendungen gelten als gefährdet.\n\nPatches sind seit dem 17. November verfügbar. Wer nicht sofort aktualisieren kann, sollte die Optimierung mit -XX:-UseBASE64Intrinsics abschalten und von außen erreichbare Java-Dienste zuerst absichern."
         },
         {
           "title": "US-Banken schieben Haftung für KI-Agenten auf Kunden",
@@ -324,7 +359,8 @@ nav button.on svg{stroke:var(--k)}
               "AI Weekly",
               "https://aiweekly.co/ai-news-today"
             ]
-          ]
+          ],
+          "details": "Die drei Banken haben am 18. November ihre Bedingungen aktualisiert. Nutzen Kunden einen KI-Agenten eines Drittanbieters für ihr Konto, haften sie für alles, was dieser tut, auch wenn Zugangsdaten abfließen oder der Agent selbst gehackt wird. Citi nimmt nur KI-Agenten aus, die die Bank selbst anbietet.\n\nDie Banken folgen damit JPMorgan und Bank of America, die bereits im Oktober ähnliche Regeln eingeführt hatten. Damit verlagern nun fünf große US-Banken das Risiko auf ihre Kunden.\n\nHintergrund ist der wachsende Einsatz von KI-Agenten, die im Auftrag von Nutzern Überweisungen ausführen oder Finanzen verwalten. Für Verbraucher heißt das: Wer solche Agenten mit dem Bankkonto verbindet, trägt das Sicherheitsrisiko vorerst weitgehend selbst. Details zu Haftungsgrenzen oder der genaue Wortlaut der Klauseln sind bislang nicht bekannt."
         }
       ]
     }
@@ -338,9 +374,10 @@ nav button.on svg{stroke:var(--k)}
         "hessenschau",
         "https://hessenschau.de/hessen-am-morgen/wegen-gta-vi-hessens-internetknotenpunkt-rechnet-mit-hohem-datenverkehr--hessen-am-morgen-die-nachrichten-im-ticker-vom-19112026,hessen-am-morgen-donnerstag-1040.html"
       ]
-    ]
+    ],
+    "details": "Laut den Betreibern des Frankfurter Internetknotens lief die Nacht zum Start „super“. Der Datenverkehr stieg kurz vor dem offiziellen Spielstart um Mitternacht noch einmal deutlich an, blieb aber unter dem Rekord vom 10. November, als das Spiel zum Herunterladen freigegeben worden war.\n\nZusammen mit Fußball-Streams sorgte GTA VI laut Betreiber für rund 20 Prozent mehr Datenverkehr am Frankfurter Knoten, einem der wichtigsten Internet-Austauschpunkte Europas. Der Betreiber spricht von einem Spiel, das Rekorde bricht; wie sich die Last in den kommenden Tagen entwickelt, ist offen."
   },
-  "updated": "19.11.2026, 13:04 Uhr"
+  "updated": "19.11.2026, 19:31 Uhr"
 }
 </script>
 <!-- BRIEFING-DATA:END -->
@@ -419,16 +456,34 @@ document.getElementById('hello').textContent = h < 11 ? 'Guten Morgen' : h < 18 
 const n = D.sections.reduce((a,s)=>a+s.items.length,1);
 document.getElementById('date').textContent = `${D.dateLabel}. ${n} Meldungen, etwa 3 Minuten.`;
 
+/* Ausführliche Zusammenfassung: "details" (Absätze durch Leerzeile getrennt), auf- und zuklappbar */
+let moreId = 0;
+const more = d => {
+  if (!d) return '';
+  const id = 'more-' + (++moreId);
+  const paras = String(d).split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join('');
+  return `<div class="more" id="${id}" hidden>${paras}</div><button class="more-btn" type="button" aria-expanded="false" aria-controls="${id}"><span>Mehr anzeigen</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>`;
+};
+const body = it => `<p>${esc(it.text)}</p>${more(it.details)}${src(it.sources)}`;
+
 document.getElementById('top').innerHTML = art(D.top.motif) +
-  `<div class="body"><div class="kind">Das Wichtigste heute</div><h2>${esc(D.top.title)}</h2><p>${esc(D.top.text)}</p>${src(D.top.sources)}</div>`;
+  `<div class="body"><div class="kind">Das Wichtigste heute</div><h2>${esc(D.top.title)}</h2>${body(D.top)}</div>`;
 
 const item = (it, i) => i === 0
-  ? `<div class="lead">${art(it.motif)}<h3>${esc(it.title)}</h3><p>${esc(it.text)}</p>${src(it.sources)}</div>`
-  : `<div class="row"><h3>${esc(it.title)}</h3>${artSq(it.motif)}<p>${esc(it.text)}</p>${src(it.sources)}</div>`;
+  ? `<div class="lead">${art(it.motif)}<h3>${esc(it.title)}</h3>${body(it)}</div>`
+  : `<div class="row"><h3>${esc(it.title)}</h3>${artSq(it.motif)}${body(it)}</div>`;
 
 let html = D.sections.map(s => `<section id="${s.id}"><div class="sec-h"><i></i><h2>${esc(s.title)}</h2></div>${s.items.map(item).join('')}</section>`).join('');
-if (D.extra) html += `<section id="extra"><div class="sec-h"><i></i><h2>Außerdem</h2></div><div class="row" style="border:0;margin:0;padding:0"><h3>${esc(D.extra.title)}</h3>${artSq(D.extra.motif)}<p>${esc(D.extra.text)}</p>${src(D.extra.sources)}</div></section>`;
+if (D.extra) html += `<section id="extra"><div class="sec-h"><i></i><h2>Außerdem</h2></div><div class="row" style="border:0;margin:0;padding:0"><h3>${esc(D.extra.title)}</h3>${artSq(D.extra.motif)}${body(D.extra)}</div></section>`;
 document.getElementById('sections').innerHTML = html;
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('.more-btn'); if (!b) return;
+  const open = b.getAttribute('aria-expanded') !== 'true';
+  b.setAttribute('aria-expanded', open);
+  b.querySelector('span').textContent = open ? 'Weniger anzeigen' : 'Mehr anzeigen';
+  document.getElementById(b.getAttribute('aria-controls')).hidden = !open;
+});
 document.getElementById('foot').textContent = `Zusammengestellt von Claude, Stand ${D.updated}. Die Bilder sind Illustrationen, keine Fotos.`;
 
 /* Tab-Leiste */
