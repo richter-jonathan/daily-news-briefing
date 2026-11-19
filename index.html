@@ -14,6 +14,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
+#progress {
+  background: var(--top);
+  transition: background-color 0.8s ease;
+  position: fixed;
+  height: 3px;
+  z-index: 9999;
+  width: 0%;
+  top: 8px;
+  left: 0px;
+}
+
 :root{
   --bg:#EEF1F4;      /* Morgennebel */
   --surface:#FFFFFF;
@@ -125,6 +136,7 @@ nav button.on svg{stroke:var(--k)}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 <div class="app">
   <header class="head"><h1 id="hello"></h1><p id="date"></p></header>
   <article class="top" id="top"></article>
@@ -498,11 +510,15 @@ const tabs = [{id:'top',tab:'Top',k:'var(--ink)'}, ...D.sections.map(s=>({id:s.i
 const nav = document.getElementById('tabs');
 nav.innerHTML = tabs.map(t => `<button data-id="${t.id}" style="--k:${t.k}" aria-label="${esc(t.tab)}"><svg viewBox="0 0 24 24">${icons[t.id]||icons.int}</svg>${esc(t.tab)}</button>`).join('');
 nav.addEventListener('click', e => { const b = e.target.closest('button'); if (b) document.getElementById(b.dataset.id).scrollIntoView(); });
-const setOn = id => nav.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.id === id));
+const setOn = id => {
+    nav.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.id === id));
+    document.getElementById('progress').style.background = 'var(--'+ id +')';
+};
 setOn('top');
 const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setOn(e.target.id === 'extra' ? 'it' : e.target.id); }), {rootMargin:'-35% 0px -60% 0px'});
 ['top', ...D.sections.map(s=>s.id), 'extra'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 </script>
 <script src="push.js?v=2" defer></script>
+<script src="progress.js" defer></script>
 </body>
 </html>
