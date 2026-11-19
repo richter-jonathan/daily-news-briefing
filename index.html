@@ -82,6 +82,12 @@ figure svg{display:block;width:100%;height:auto}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
 
 .foot{padding:0 20px;color:var(--muted);font-size:13px}
+.push{padding:16px 20px 0;font-size:14px;color:var(--muted)}
+.push:empty{display:none}
+.push p{margin-bottom:10px}
+.push button{font:inherit;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;cursor:pointer}
+.push button.quiet{background:none;border:0;padding:0;font-weight:500;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.push textarea{display:block;width:100%;font:12px ui-monospace,monospace;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;margin-bottom:10px;resize:none}
 
 /* Tab-Leiste */
 nav{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:8px 10px calc(var(--safe-b) + 8px);
@@ -105,6 +111,7 @@ nav button.on svg{stroke:var(--k)}
   <article class="top" id="top"></article>
   <div id="sections"></div>
   <p class="foot" id="foot"></p>
+  <div class="push" id="push"></div>
 </div>
 <nav><div class="in" id="tabs"></div></nav>
 
@@ -303,5 +310,6 @@ setOn('top');
 const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setOn(e.target.id === 'extra' ? 'it' : e.target.id); }), {rootMargin:'-35% 0px -60% 0px'});
 ['top', ...D.sections.map(s=>s.id), 'extra'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 </script>
+<script src="push.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+name: Push-Benachrichtigung
+
+on:
+  schedule:
+    # 5 und 6 Uhr UTC = 7 Uhr in Berlin (Sommer- bzw. Winterzeit); das Skript filtert den passenden Lauf.
+    - cron: '0 5,6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Sofort senden (Uhrzeit und Datum ignorieren) – zum Testen'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: push-notification
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save --no-audit --no-fund web-push@3.6.7
+      - run: node .github/scripts/send-push.mjs
+        env:
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.force }}
