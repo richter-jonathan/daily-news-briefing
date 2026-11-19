@@ -112,7 +112,7 @@ Jede Meldung (`items[]`) hat die Felder `title`, `text`, `motif` und `sources`.
 | Name | **Morgen-Briefing (GitHub)** |
 | Zeitplan | täglich um 6:45 Uhr Europe/Berlin (`CRON_TZ=Europe/Berlin 45 6 * * *`) |
 | Modell | Claude Opus 5.5 |
-| Repo | `J0nathan27/daily-news-briefing` (Branch `main`) |
+| Repo | `richter-jonathan/daily-news-briefing` (Branch `main`) |
 | Verwalten | https://claude.ai/code/routines/trig_015VVFahn1r8CuESoxAABw4F |
 
 Was die Routine macht:
