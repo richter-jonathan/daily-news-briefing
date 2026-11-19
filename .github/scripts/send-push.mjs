@@ -24,7 +24,7 @@ for (const k of ['VAPID_PUBLIC_KEY', 'VAPID_PRIVATE_KEY', 'PUSH_SUBSCRIPTION']) 
 }
 const clean = s => s.trim().replace(/^["']|["']$/g, '');
 try {
-  webpush.setVapidDetails('https://j0nathan27.github.io/daily-news-briefing/', clean(process.env.VAPID_PUBLIC_KEY), clean(process.env.VAPID_PRIVATE_KEY));
+  webpush.setVapidDetails('https://richter-jonathan.github.io/daily-news-briefing/', clean(process.env.VAPID_PUBLIC_KEY), clean(process.env.VAPID_PRIVATE_KEY));
 } catch (err) {
   console.error(`::error::VAPID-Schlüssel ungültig: ${err.message} – bitte VAPID_PUBLIC_KEY / VAPID_PRIVATE_KEY neu und ohne Leerzeichen oder Anführungszeichen speichern.`);
   process.exit(1);

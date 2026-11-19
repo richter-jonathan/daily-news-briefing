@@ -4,7 +4,7 @@ Ein tägliches Nachrichten-Briefing auf Deutsch als installierbare Web-App (PWA)
 Jeden Morgen erstellt eine Claude-Routine das Briefing und veröffentlicht es über GitHub Pages.
 Um 7 Uhr kommt eine Push-Benachrichtigung aufs Handy.
 
-**Live:** https://j0nathan27.github.io/daily-news-briefing/
+**Live:** https://richter-jonathan.github.io/daily-news-briefing/
 
 ---
 
@@ -160,7 +160,7 @@ Die Benachrichtigungen verwenden den Standard **Web Push** mit **VAPID**-Schlüs
 Die Action braucht **drei Repository-Secrets**. Du legst sie hier an:
 
 **Repo → Settings → Secrets and variables → Actions → Reiter „Secrets“ → „New repository secret“**
-(direkt: https://github.com/J0nathan27/daily-news-briefing/settings/secrets/actions)
+(direkt: https://github.com/richter-jonathan/daily-news-briefing/settings/secrets/actions)
 
 | Name (genau so schreiben) | Inhalt | Woher |
 |---|---|---|
