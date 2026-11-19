@@ -310,6 +310,6 @@ setOn('top');
 const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setOn(e.target.id === 'extra' ? 'it' : e.target.id); }), {rootMargin:'-35% 0px -60% 0px'});
 ['top', ...D.sections.map(s=>s.id), 'extra'].forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 </script>
-<script src="push.js" defer></script>
+<script src="push.js?v=2" defer></script>
 </body>
 </html>
